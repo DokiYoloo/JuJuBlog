@@ -1,0 +1,18 @@
+{
+  "name": "jujublog",
+  "version": "1.0.0",
+  "description": "jujublog 3.0 lalala",
+  "scripts": {
+    "docs:build": "vuepress build docs",
+    "docs:clean-dev": "vuepress dev docs --clean-cache",
+    "docs:dev": "vuepress dev docs"
+  },
+  "devDependencies": {
+    "@vuepress/client": "^2.0.0-beta.48",
+    "@vuepress/plugin-active-header-links": "^1.9.7",
+    "vue": "^3.2.36",
+    "vuepress": "^2.0.0-beta.48",
+    "vuepress-theme-hope": "^2.0.0-beta.84",
+    "three": "0.142.0"
+  }
+}
