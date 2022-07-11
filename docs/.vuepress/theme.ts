@@ -58,6 +58,7 @@ export default hopeTheme({
   encrypt: {
     config: {
       "/guide/encrypt.html": ["1234"],
+      "/posts/testEncrypt.html": ["DokiYolo"],
     },
   },
 
@@ -69,7 +70,7 @@ export default hopeTheme({
     },
 
     // 版权插件 复制文案时生效
-    copyright: { 
+    copyright: {
       // 如果不是全局启用 那么需要 frontmatter 中设置 copy: true 手动开启
       global: false,
       triggerWords: 1,
