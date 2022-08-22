@@ -10,17 +10,17 @@ bgImage: 'https://static.marketup.cn/marketup/company/151/2022/79/cu/28098478359
 tagline: more code and code more
 projects:
   - icon: /logo.svg
-    name: 现在的城市
+    name: 目前在
     desc: 江苏省南京市
   - icon: /logo.svg
-    name: 现在的职业
-    desc: Java后端开发
+    name: 目前职业
+    desc: JavaDeveloper
   - icon: /logo.svg
-    name: 目前阶段
-    desc: 沉淀中，还是太菜
+    name: 该博客
+    desc: 目前在GitPage托管
   - icon: /logo.svg
-    name: 工作经验
-    desc: 即将3年
+    name: 使用主题
+    desc: vuepress-theme-hope
 
 footer: <a href="https://ofpp.cn">DokiYolo Home</a>
 ---
