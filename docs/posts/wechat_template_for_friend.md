@@ -157,7 +157,14 @@ oQFk-5qtXv2uGNCu9oiCiV85KWD8   这个就是我们上面提到的男朋友/女朋
 ![image.png](https://my-blog-use.oss-cn-hangzhou.aliyuncs.com/use/29.png)  
 ![image.png](https://my-blog-use.oss-cn-hangzhou.aliyuncs.com/use/30.png)  
 上图main表示的是分支 这个如果是完全按照博客的步骤来的 就是main大家可以不必多想  
-这个配置的话 就是这个分支 文件有变动（如何上传文件触发 下面会有答案） 就会自动执行一次  
+这个配置的话 就是这个分支 文件有变动（如何上传文件触发 下面会有答案） 就会自动执行一次    
+临时更新: 发现有很多朋友加我 发现格式有问题 大家可以直接复制避免出现格式错误  
+```txt
+on:
+  push:
+    branches:
+      - main
+```
 
 
 #### 5.如何免配置Java与Git环境发布代码到Github  
