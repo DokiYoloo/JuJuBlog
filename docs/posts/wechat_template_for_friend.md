@@ -239,7 +239,7 @@ src/main/java/cn/ofpp/core/
 上传完大概是这样的  
 ![image.png](https://my-blog-use.oss-cn-hangzhou.aliyuncs.com/use/28.png)   
 
-:::info、
+:::info
 常见问题  
 
 1.如何得知任务是否有执行  
