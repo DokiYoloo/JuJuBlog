@@ -183,29 +183,38 @@ on:
 然后咱们选择 上传已有文件  
 ![image.png](https://my-blog-use.oss-cn-hangzhou.aliyuncs.com/use/19.png)   
 
-然后这个页面我们选择文件 找到刚才解压且修改过的源码 我们全选
+然后这个页面我们选择文件 找到刚才解压且修改过的源码 ~~我们全选~~  
 ![image.png](https://my-blog-use.oss-cn-hangzhou.aliyuncs.com/use/20.png)  
 
 ![image.png](https://my-blog-use.oss-cn-hangzhou.aliyuncs.com/use/21.png)  
 
 :::danger
-大家注意，这时候虽然是全选的 但是只会上传不是文件夹的文件  文件夹后面我们需要手动创建  
+~~大家注意，这时候虽然是全选的 但是只会上传不是文件夹的文件  文件夹后面我们需要手动创建~~  
 注意虽然麻烦一些 但是可以免配置环境~
 :::  
+:::danger
+这里订正一下，大家直接把文件夹拖进去 不要全选确认 拖进去的话会自动创建  
+src/main/java/cn/ofpp/  
+src/main/java/cn/ofpp/core/  
+这两个文件夹 以及里面的文件能省好多事情 但是 `.github/workflows` 这个文件夹还是需要自己创建的    
+:::  
 
-上传成功后 我们会回到图下这个页面  大家会发现没有刚才选中问文件夹 只有文件  
+上传成功后 我们会回到图下这个页面  ~~大家会发现没有刚才选中问文件夹 只有文件~~  
+订正: 只是没有 `.github/workflows` 文件夹 以及里面的文件
 ![image.png](https://my-blog-use.oss-cn-hangzhou.aliyuncs.com/use/22.png)  
 我们选择图上的 `create new file`  
 我们会到如下的页面
 ![image.png](https://my-blog-use.oss-cn-hangzhou.aliyuncs.com/use/23.png)  
 我们需要在这里创建出项目的结构（其实就是文件夹结构） 
 我们可以通过 电脑的文件管理器 看到目录结构
-![image.png](https://my-blog-use.oss-cn-hangzhou.aliyuncs.com/use/24.png)  
+![image.png](https://my-blog-use.oss-cn-hangzhou.aliyuncs.com/use/24.png)   
+
+  
+我们需要创建的文件夹一共有下面~~三种~~（如果是拖拽进去的就只需要创建 `.github/workflows` 文件夹）
 ```txt
-我们需要创建的文件夹一共有下面三种
 .github/workflows/
-src/main/java/cn/ofpp/
-src/main/java/cn/ofpp/core/
+src/main/java/cn/ofpp/  
+src/main/java/cn/ofpp/core/  
 ```  
 建议大家直接复制我的文件夹格式 粘贴到框框里 会自动识别成文件夹  
 ![image.png](https://my-blog-use.oss-cn-hangzhou.aliyuncs.com/use/25.png)  
@@ -217,11 +226,12 @@ src/main/java/cn/ofpp/core/
 这个时候我们再把文件夹下相应的文件传上去就可以了 
 :::
 
-第三个文件夹 `src/main/java/cn/ofpp/core/` 其实是 `src/main/java/cn/ofpp/` 的子文件夹 大家注意哦 其实只需要在 `ofpp` 文件夹里面创建`core`文件夹就可以了  
+~~第三个文件夹 `src/main/java/cn/ofpp/core/` 其实是 `src/main/java/cn/ofpp/` 的子文件夹 大家注意哦 其实只需要在 `ofpp` 文件夹里面创建`core`文件夹就可以了~~ （如果是拖拽进去的就不用自己创建这两个文件夹了）
 ![image.png](https://my-blog-use.oss-cn-hangzhou.aliyuncs.com/use/26.png)  
 按照这样的方法 我们创建出三个文件夹 
 
-##### 创建完文件夹之后 我们上传文件 其实就和上面的步骤一样了  我们到相应的文件夹上传对应的文件即可
+##### 创建完文件夹之后 我们上传文件 其实就和上面的步骤一样了  我们到相应的文件夹上传对应的文件即可  
+#### 这个时候如果上面使用的是拖拽的 那么就只需要上传 .github/workflows/ci.yml 这个文件
 ![image.png](https://my-blog-use.oss-cn-hangzhou.aliyuncs.com/use/27.png)  
 
 # 集美们、伙伴们 上传文件后 这个时候我们就好了！  大家要自己检查文件是否都上传了  
@@ -229,9 +239,23 @@ src/main/java/cn/ofpp/core/
 上传完大概是这样的  
 ![image.png](https://my-blog-use.oss-cn-hangzhou.aliyuncs.com/use/28.png)   
 
+:::info、
+常见问题  
+
+1.如何得知任务是否有执行  
+答: 在你自己的项目主页，有个Actions的选项 点一下 可以看到`All workflows`下面会有一个`CareUEveryDay Cron CI`  
+也可能没有Cron 然后点击它就可以看到它的运行记录 （红色表示失败，绿色表示执行成功）出现红色大概率是代码改的不对导致编译失败了  
+
+2.任务执行成功但是没收到消息
+答: 这种情况是配置有误，在你自己的项目主页，有个Actions的选项 点一下 可以看到`All workflows`下面会有一个`CareUEveryDay Cron CI`  
+也可能没有Cron 右侧可以看到它的运行记录点击最新的一个记录的标题 进入详情，进入详情后点击左侧 `jobs` 标题下的`build`点击后右侧出现黑色框，  
+然后大家点击 `SendWxTemplateMsg` 就会展开一个框框 里面如果是发送失败 就会打印错误信息 大家根据信息排查即可  
+:::
+
 :::danger
 我不会向大家收钱 请大家积极举报  
 如果大家实在难以完成，或有其他问题，可以加我的微信，可以帮大家看看是啥问题  
-wx: DokiYoloo
+微信被加爆啦。。。
+~~wx: DokiYoloo~~
 :::
 
